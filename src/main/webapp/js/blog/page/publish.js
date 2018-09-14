@@ -2,30 +2,32 @@
  * Created by lixuhui on 2018/9/14.
  */
 
-function submit() {
-    var authorId = 1;
+function submit(id) {
     var title = $("#title").val();
     var content = ue_content.getContent();
+    var tag = 1;
 
     var jsonData = {
-        authorId: authorId,
+        id: id,
         title: title,
-        richContent: content,
-        simpleContent: content,
+        content: content,
+        tag: tag
     };
 
+    url = id ? "/blog/article/update" : "/blog/article/save";
+
     $.ajax({
-        url: "/blog/article/publish",
+        url: url,
         type: 'POST',
         contentType: "application/json; charset=UTF-8",
         data: JSON.stringify(jsonData),
         dataType: "json",
         success: function (data) {
-            if (data.retCode == 0) {
+            if (data.code == 0) {
                 alert(data.msg);
                 window.location.href = "/blog/article/" + data.data;
             } else {
-                alert("code:" + data.retCode + ", msg:" + data.msg);
+                alert("code:" + data.code + ", msg:" + data.msg);
             }
         },
         error: function(){

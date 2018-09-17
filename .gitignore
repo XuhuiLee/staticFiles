@@ -21,6 +21,8 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea
+target
 .idea/.name
 .idea/artifacts/staticFiles_war.xml
 *.iml
@@ -313,3 +315,4 @@ target/static_files-1.0-SNAPSHOT/ueditor/ueditor.parse.min.js
 target/static_files-1.0-SNAPSHOT/ueditor/zh-cn.js
 target/static_files-1.0-SNAPSHOT/WEB-INF/web.xml
 target/static_files-1.0-SNAPSHOT/web.xml
+.idea/artifacts/static_files_war.xml

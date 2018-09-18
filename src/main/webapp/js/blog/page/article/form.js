@@ -39,12 +39,15 @@ function submit(id) {
 var ue_content;
 $(function () {
     ue_content = UE.getEditor('editor_content', {
-        initialFrameHeight: 100,
-        initialFrameWeight: 100,
-        initialStyle:'p{line-height:1em;font-size: 14px; }',
+        initialFrameHeight: document.body.offsetHeight * 4 / 5,
+        initialFrameWidth: $('#title').width,
+        initialStyle:'p{line-height:1.5em;font-size: 15px; }',
         toolbars: [[
-            'undo', 'redo',
-            '|', 'removeformat',
-        ]]
+            'fontsize', 'bold', 'italic', 'underline', 'forecolor', 'backcolor', '|', 'upimg'
+        ]],
+        labelMap:{
+            'upimg':'插入图片'
+        },
+        fontsize:[10, 11, 12, 14, 16, 18, 20, 24, 36],
     });
 });

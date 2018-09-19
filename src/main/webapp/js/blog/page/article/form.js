@@ -2,10 +2,10 @@
  * Created by lixuhui on 2018/9/14.
  */
 
-function submit(id) {
+function submitArticle(id) {
     var title = $("#title").val();
     var content = ue_content.getContent();
-    var tag = 1;
+    var tag = $("#tag").val();
 
     var jsonData = {
         id: id,
@@ -24,7 +24,6 @@ function submit(id) {
         dataType: "json",
         success: function (data) {
             if (data.code == 0) {
-                alert(data.msg);
                 window.location.href = "/blog/article/" + data.data;
             } else {
                 alert("code:" + data.code + ", msg:" + data.msg);
@@ -34,6 +33,15 @@ function submit(id) {
             alert("系统异常");
         }
     });
+}
+
+function selectTag(tagId, tagName) {
+    $("#tag").val(tagId);
+    $("#tag").html(
+    '<span class="am-icon-bookmark"></span> ' +
+        tagName +
+        ' <span class="am-icon-caret-down"></span>');
+    $("#tag_dropdown").dropdown('close');
 }
 
 var ue_content;

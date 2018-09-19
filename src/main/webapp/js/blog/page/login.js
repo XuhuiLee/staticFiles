@@ -5,6 +5,8 @@
 function login() {
     var username = $("#username").val();
     var password = $("#password").val();
+    // md5够了
+    password = $.md5(password);
 
     $.ajax({
         url: "/blog/login",

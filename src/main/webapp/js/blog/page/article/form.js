@@ -14,7 +14,7 @@ function submitArticle(id) {
         tag: tag
     };
 
-    url = id ? "/blog/article/update" : "/blog/article/save";
+    url = id > 0 ? "/blog/article/update" : "/blog/article/save";
 
     $.ajax({
         url: url,

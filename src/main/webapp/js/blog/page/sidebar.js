@@ -24,7 +24,7 @@ function submitTag() {
         dataType: "json",
         success: function (data) {
             if (data.code == 0) {
-                window.location.href = "/blog/list?tagId" + data.data;
+                window.location.href = "/blog/list/" + data.data;
             } else {
                 alert("code:" + data.code + ", msg:" + data.msg);
             }
@@ -33,6 +33,12 @@ function submitTag() {
             alert("系统异常");
         }
     });
+}
+
+function editTag(id, name, parentId, parentName) {
+    $("#tag_form_name").val(name);
+    selectFormTag(parentId, parentName);
+    showSign(id);
 }
 
 function selectFormTag(tagId, tagName) {
@@ -46,6 +52,10 @@ function selectFormTag(tagId, tagName) {
 
 function showSign(tagId){
     $("#tag_form_id").val(tagId);
+    if (tagId == 0) {
+        $("#tag_form_name").val("");
+        selectFormTag(0, "父级Tag：无");
+    }
     $("#tag_form_wrap").toggle();
 }
 

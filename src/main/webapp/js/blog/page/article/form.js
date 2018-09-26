@@ -4,14 +4,16 @@
 
 function submitArticle(id) {
     var title = $("#title").val();
-    var content = ue_content.getContent();
+    var markdown = editor_content.getMarkdown();
+    var content = editor_content.getHTML();
     var tag = $("#tag").val();
 
     var jsonData = {
         id: id,
         title: title,
         content: content,
-        tag: tag
+        tag: tag,
+        markdown: markdown
     };
 
     url = id > 0 ? "/blog/article/update" : "/blog/article/save";
@@ -44,18 +46,12 @@ function selectTag(tagId, tagName) {
     $("#tag_dropdown").dropdown('close');
 }
 
-var ue_content;
-$(function () {
-    ue_content = UE.getEditor('editor_content', {
-        initialFrameHeight: document.body.offsetHeight * 4 / 5,
-        initialFrameWidth: $('#title').width,
-        initialStyle:'p{line-height:1.5em;font-size: 15px; }',
-        toolbars: [[
-            'fontsize', 'bold', 'italic', 'underline', 'forecolor', 'backcolor', '|', 'upimg'
-        ]],
-        labelMap:{
-            'upimg':'插入图片'
-        },
-        fontsize:[10, 11, 12, 14, 16, 18, 20, 24, 36],
+var editor_content;
+$(function() {
+    editor_content = editormd({
+        id : "editormd",
+        height : 500,
+        path : "/sf/editormd/lib/",
+        saveHTMLToTextarea : true
     });
 });

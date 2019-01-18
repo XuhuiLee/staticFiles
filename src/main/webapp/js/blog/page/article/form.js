@@ -52,6 +52,42 @@ $(function() {
         id : "editormd",
         height : 500,
         path : "/sf/editormd/lib/",
-        saveHTMLToTextarea : true
+        saveHTMLToTextarea : true,
+        imageUpload       : true,
+        imageFormats      : ["jpg", "jpeg", "gif", "png", "bmp"],
+        imageUploadURL    : "/img/upload/editormd-image-file"
+    });
+
+    $("#editormd").on('paste', function (ev) {
+        var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+        for (var index in items) {
+            var item = items[index];
+            if (item.kind === 'file') {
+                var blob = item.getAsFile();
+                var reader = new FileReader();
+                reader.onload = function (event) {
+                    var base64 = event.target.result;
+                    $.ajax({
+                        url: "/img/upload/base64",
+                        type: 'POST',
+                        data: {
+                            picBase64: base64
+                        },
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.code == 0) {
+                                editor_content.appendMarkdown('![](/img/' + data.data + ')');
+                            } else {
+                                alert("code:" + data.code + ", msg:" + data.msg);
+                            }
+                        },
+                        error: function(){
+                            alert("系统异常");
+                        }
+                    });
+                };
+                reader.readAsDataURL(blob);
+            }
+        }
     });
 });

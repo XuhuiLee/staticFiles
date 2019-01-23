@@ -76,7 +76,7 @@ $(function() {
                         dataType: "json",
                         success: function (data) {
                             if (data.code == 0) {
-                                editor_content.appendMarkdown('![](/img/' + data.data + ')');
+                                editor_content.insertValue('![](/img/' + data.data + ')');
                             } else {
                                 alert("code:" + data.code + ", msg:" + data.msg);
                             }

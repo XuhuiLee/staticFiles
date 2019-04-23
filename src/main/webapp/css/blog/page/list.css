@@ -7,3 +7,6 @@
 .am-header-container {
     border-bottom: 1px lightgray solid;
 }
+table {
+    margin:0 auto;
+}

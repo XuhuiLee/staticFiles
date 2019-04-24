@@ -10,6 +10,22 @@
 table {
     margin:0 auto;
 }
-.list-content-pic-content {
-    height: 170px;
+.list-pic-content {
+    height: 120px;
+}
+.list-pic-append {
+    position: relative;
+}
+.list-pic-num {
+    font-size: 12px;
+    line-height: 21px;
+    position: absolute;
+    width: 58px;
+    height: 22px;
+    text-align: center;
+    color: #fff;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,.3);
+    top: 6px;
+    right: 6px;
 }

@@ -36,6 +36,10 @@ function submitTag() {
 }
 
 function editTag(id, name, parentId, parentName) {
+    if (parentName == null || parentName == "") {
+        parentName = "无";
+    }
+    parentName = "父级Tag：" + parentName;
     $("#tag_form_name").val(name);
     selectFormTag(parentId, parentName);
     showSign(id);

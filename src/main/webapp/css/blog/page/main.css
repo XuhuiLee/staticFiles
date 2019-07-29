@@ -1,0 +1,17 @@
+.main-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    justify-content: space-between;
+}
+.main-left, .main-right, .main-middle {
+    height: 100%;
+}
+.main-middle {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

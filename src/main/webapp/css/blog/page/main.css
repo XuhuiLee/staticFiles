@@ -9,6 +9,7 @@
 }
 .main-left, .main-right, .main-middle {
     height: 100%;
+    background-color: #fcfcfc;
 }
 .main-middle {
     width: 100%;

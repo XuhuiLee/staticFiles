@@ -2,7 +2,6 @@
     cursor: pointer;
 }
 .am-list-container {
-    background-color: rgba(0,0,0,0.06);
 }
 .am-header-container {
     border-bottom: 1px lightgray solid;

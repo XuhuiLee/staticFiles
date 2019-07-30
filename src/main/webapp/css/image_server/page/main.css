@@ -1,0 +1,57 @@
+body {
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.am-topbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+    font-size: 1.4rem;
+    background-color: #0e90d2;
+    border-color: #0b6fa2;
+    min-height: 50px;
+    position: relative;
+    margin-bottom: 1.2rem;
+
+    padding: 0 10px;
+}
+.am-topbar-brand {
+    width: 100%;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 1000px;
+
+    padding: 0 10px;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    /*margin: 0;*/
+
+}
+a {
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    /*line-height: 50px;*/
+}
+strong {
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+small {
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.0rem;
+    font-weight: 400;
+}

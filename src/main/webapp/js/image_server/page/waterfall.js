@@ -4,10 +4,11 @@ void function(window, document, undefined) {
   "user strict";
 
   var MIN_COLUMN_COUNT = 1; // minimal column count
-  var COLUMN_WIDTH = 220;   // cell width: 190, padding: 14 * 2, border: 1 * 2
-  var CELL_PADDING = 8;    // cell padding: 14 + 10, border: 1 * 2
-  var GAP_HEIGHT = 10;      // vertical gap between cells
-  var GAP_WIDTH = 10;       // horizontal gap between cells
+  var IMG_WIDTH = 190;
+  var CELL_PADDING = 6;    // 这里要跟css一致
+  var GAP_HEIGHT = 8;      // vertical gap between cells
+  var GAP_WIDTH = 9;       // horizontal gap between cells
+  var COLUMN_WIDTH = IMG_WIDTH + 2 * CELL_PADDING;   // 这里要跟图片一致
   var THRESHOLD = 2000;     // determines whether a cell is too far away from viewport (px)
 
   var columnHeights;        // array of every column's height
@@ -119,7 +120,7 @@ void function(window, document, undefined) {
           cell.tagLine = images[j].title;
           cells.push(cell);
           cell.innerHTML = `
-            <p><a href="${images[j].src}" target="_blank"><img class="am-img-thumbnail am-img-bdrs" src="${images[j].src}" height="${images[j].height}" width="${images[j].width}" /></a></p>
+            <a href="${images[j].src}" target="_blank"><img class="am-img-thumbnail am-img-bdrs" src="${images[j].src}" height="${images[j].height}" width="${images[j].width}" /></a>
           `
           fragment.appendChild(cell);
         }
@@ -140,7 +141,8 @@ void function(window, document, undefined) {
       // Place the cell to column with the minimal height.
       columnIndex = getMinKey(columnHeights);
       columnHeight = columnHeights[columnIndex];
-      cells[j].style.height = (cells[j].offsetHeight - CELL_PADDING) + 'px';
+      cells[j].style.width = IMG_WIDTH + 'px';
+      cells[j].style.height = cells[j].offsetHeight - 2 * CELL_PADDING + 'px';
       cells[j].style.left = columnIndex * (COLUMN_WIDTH + GAP_WIDTH) + 'px';
       cells[j].style.top = columnHeight + 'px';
       columnHeights[columnIndex] = columnHeight + GAP_HEIGHT + cells[j].offsetHeight;

@@ -3,9 +3,9 @@ void function(window, document, undefined) {
   // ES5 strict mode
   "user strict";
 
-  var MIN_COLUMN_COUNT = 3; // minimal column count
+  var MIN_COLUMN_COUNT = 1; // minimal column count
   var COLUMN_WIDTH = 220;   // cell width: 190, padding: 14 * 2, border: 1 * 2
-  var CELL_PADDING = 10;    // cell padding: 14 + 10, border: 1 * 2
+  var CELL_PADDING = 8;    // cell padding: 14 + 10, border: 1 * 2
   var GAP_HEIGHT = 10;      // vertical gap between cells
   var GAP_WIDTH = 10;       // horizontal gap between cells
   var THRESHOLD = 2000;     // determines whether a cell is too far away from viewport (px)
@@ -120,7 +120,6 @@ void function(window, document, undefined) {
           cells.push(cell);
           cell.innerHTML = `
             <p><a href="${images[j].src}" target="_blank"><img class="am-img-thumbnail am-img-bdrs" src="${images[j].src}" height="${images[j].height}" width="${images[j].width}" /></a></p>
-            <h2><a href="${images[j].src}" target="_blank">${images[j].title}</a></h2>
           `
           fragment.appendChild(cell);
         }

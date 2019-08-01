@@ -120,7 +120,7 @@ void function(window, document, undefined) {
           cell.tagLine = images[j].title;
           cells.push(cell);
           cell.innerHTML = `
-            <a href="${images[j].src}" target="_blank"><img class="am-img-thumbnail am-img-bdrs" src="${images[j].src}" height="${images[j].height}" width="${images[j].width}" /></a>
+            <a href="/img/pic/${images[j].src}" target="_blank"><img class="am-img-thumbnail am-img-bdrs" src="/img/prev/${images[j].src}" height="${images[j].height}" width="${images[j].width}" /></a>
           `
           fragment.appendChild(cell);
         }
